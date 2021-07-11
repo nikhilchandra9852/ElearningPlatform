@@ -1,0 +1,17 @@
+{% extends 'users/header.html'%}
+
+{% block content %}
+<div class='jumbotron col-md' style="margin-top: 50px">
+        <p style=" color: black;" > Just enter your college re gister number </p>
+
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Register No</label>
+                <input type="text" name="register" class='form-control' placeholder="Enter the register_no">
+            </div>
+            <button class="btn btn btn-primary">start<i aria-hidden="true"></i>
+        </form>
+</div>
+
+{% endblock %}

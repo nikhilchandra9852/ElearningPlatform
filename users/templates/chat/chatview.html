@@ -1,0 +1,39 @@
+{% extends 'chat/base.html'%}
+
+{% block title %}
+     All Chats
+{% endblock title %}
+{% block content %}
+    <br><a href="{% url 'base' id %}"><button class="btn btn-outline-primary">New Message</button></a>
+    <a href="#"><button class="btn btn btn-primary" onclick="window.location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i>
+    Rerfresh For Any New Chats</button></a><br><br><br>
+    <style >
+        div.scroll {
+            overflow-x :hidden;
+            overflow-y: auto;
+        }
+    </style>
+
+    {% for chat in objects_list %}
+        <div class="scroll">
+        {% if chat.reg_no == id %}
+    	<div class="chat" style="width: 80%; background: #add8e6; ">
+            <small class="chat-user"> {{ chat.reg_no }} </small>                
+            <h1 class="chat-user">{{chat.message }} </h1>
+            <small class="chat-date">{{ chat.posted_at }}</small>
+        </div><br><br>
+        {% else %}
+        <div class="chat" style="width: 80%; background: rgb(220, 20, 60); ">
+            <small class="chat-user"> {{ chat.reg_no }} </small>                
+            <h1 class="chat-user">{{chat.message }} </h1>
+            <small class="chat-date">{{ chat.posted_at }}</small>
+    	</div><br><br>
+        {% endif %}
+    </div>
+
+    {% empty %}
+    <h1 class="heading">No Chats Yet Be The First To Message!</h1><br>
+
+    {% endfor %}
+    <!-- <br><a href="{% url 'base' id %}"><button class="btn btn-outline-primary">New Message</button></a> -->
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'users/header.html'%}
+
+{% block content %}
+
+<div class='container'>
+	<h1 class='text-center'>Register</h1>
+	<div class='jumbotron col-md' style="margin-top: 50px">
+		<form action="" method="POST" >
+			{% csrf_token %}
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" class='form-control' placeholder="Enter the name">
+			</div>
+			<div class="form-group">
+				<label>Register No</label>
+				<input type="text" name="register_no" class='form-control' placeholder="Enter the register_no">
+			</div>
+			<div class="form-group">
+				<label>Branch</label>
+				<input type="text" name="branch" class='form-control' placeholder="Enter the Branch">
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input type="text" name="email" placeholder="Enter the email" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<input type="Password" name="password" placeholder="Enter the Password" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Confirm Password</label>
+				<input type="Password" name="con_password" placeholder="Enter the Password again" class="form-control">
+			</div>
+			<div class="text-center">
+				<input type="submit" value="register" class="btn btn-outline-primary btn-lg">
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

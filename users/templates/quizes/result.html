@@ -1,0 +1,42 @@
+{% extends 'quizes/quiztemplate.html' %}
+
+{% block title %}
+    Result
+{% endblock title %}
+
+{% block content %}
+
+<div class='jumbotron col-md' style="margin-top: 50px">
+    <h1 class='text-center' style="color:white;">Result</h1>
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <p>Marks = {{marks}}</p>
+            </div>
+                <div class="form-group">
+                    <p>Percentage = {{percentage}}</p>
+                </div>
+            <button class="btn btn btn-primary">go to quiz main page<i aria-hidden="true"></i>
+            </button>
+        </form>
+        <div class="scroll">
+        <div class="chat" style="width: 40%; background: rgb(200, 200, 255); ">
+            <table border="1px">
+                <thead>
+                    <td colspan="10">question</td>
+                    <td colspan="10">correctanswer</td>
+                    <td colspan="10">selected</td>
+                </thead>
+                {% for i in data %}
+                <tr>
+            <td colspan="10" class="chat-user"> {{ i.question }} </td><span></span>
+            <td colspan="10" class="chat-branch">{{i.corranswer}}</td><span></span>
+            <td colspan="10" class="chat-user">{{i.selected_option }} </td><span></span><span></span>
+        </tr>
+        {% endfor %}
+        </div><br><br>
+    </div>
+
+    
+    </div>
+{% endblock %}

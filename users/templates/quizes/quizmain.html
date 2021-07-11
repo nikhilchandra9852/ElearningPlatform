@@ -1,0 +1,18 @@
+{% extends 'quizes/quiztemplate.html' %}
+
+{% block title %}
+    Start
+{% endblock title %}
+
+{% block content %}
+
+
+<div class='jumbotron col-md' style="margin-top: 50px">
+        <p style=" color: black;" > Hii Click start to start exam There is no time limit. </p>
+
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <button class="btn btn btn-primary">start<i aria-hidden="true"></i>
+        </form>
+    </div>
+{% endblock %}

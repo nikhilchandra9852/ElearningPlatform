@@ -1,0 +1,45 @@
+{% extends 'users/header.html'%}
+
+{% block content %}
+
+<div class="container">
+	<h1>login</h1>
+	<div class='jumbtron col-md'>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+				<label>Email</label>
+				<input type="text" name="email" placeholder="Enter the email" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<input type="Password" name="password" placeholder="Enter the Password" class="form-control">
+			</div>
+			<div align="text-center">
+				<input type="submit" value="login" class="btn btn-outline-primary btn-lg">
+
+			</div>
+		</form>
+
+	</div>
+</div>
+<div class="row">
+     <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+         <button class="btn" >
+         	<a id="" href="{% url 'fg' %}">Forgot Password</a>
+         </button>
+    </div>
+</div>
+<div class="row">
+     <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+         <button class="btn btn-success  mb-2" >
+             <a id="google_login" href="/accounts/google/login">Login with google</a>
+         </button>
+         <button class="btn btn-danger mb-2">
+             <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook
+             </a>
+         </button>
+     </div>
+ </div>
+ </div>
+{% endblock %}

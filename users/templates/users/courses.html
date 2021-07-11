@@ -1,0 +1,26 @@
+{% extends 'users/dashboard.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+	<table class="table table-bordered table-hover table-primary">
+		<thead>
+			<tr class ="bg-info">
+			<th>courses</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in notes %}
+
+
+		<tr>
+			<td>{{i}}</td>
+			<td><a href = "{% url 'pdf' id branch i %}">Link</a>
+			</td>
+		</tr>
+	</tbody>
+	{% endfor %}
+</table>
+</div>
+
+{% endblock content %}

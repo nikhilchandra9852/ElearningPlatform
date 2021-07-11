@@ -1,0 +1,59 @@
+{% extends 'quizes/quiztemplate.html' %}
+
+{% block title %}
+    quiz
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+    <form  method ="POST">
+        {% csrf_token  %}
+            <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>MCQ Quiz</h4><span>{{counter}}</span>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h3 class="text-danger">Q.</h3>
+                        <h5 class="mt-1 ml-2">{{data.question}}</h5>
+                    </div>
+                    <div class="radio-toolbar">
+
+                <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="CHOICES1" value={{data.option_1}} id='one'> <span>{{data.option_1}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="CHOICES2"  value={{data.option_1}} id='two'  > <span>{{data.option_2}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="CHOICES3"  value={{data.option_1}} id ='three'> <span>{{data.option_3}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="CHOICES4"  value={{data.option_1}} id ='four'> <span>{{data.option_4}}</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+
+                    
+                <p id ="selected" name ="output" ></p>
+                <div class='inline'>
+                <button  name ='save' value ='save' class='btn btn-primary d-flex align-items-center btn-danger' onClick="select()">Save</button>
+                </div>
+                </div>
+        </div> 
+    </div>
+</form>
+
+</div>
+{% endblock content %}

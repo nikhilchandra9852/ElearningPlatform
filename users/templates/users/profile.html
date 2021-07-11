@@ -1,0 +1,28 @@
+{% extends 'users/dashboard.html' %}
+
+{% block content %}
+
+
+<div class='container'>
+	<h1 class='text-center' style="color:white;">Profile-{{data.register_no}}</h1>
+	<div class='jumbotron col-md' style="margin-top: 50px">
+		<form action="" method="POST" >
+			{% csrf_token %}
+			<div class="form-group">
+				<p>Name = {{data.name}}</p>
+			</div>
+			<div class="form-group">
+				<p>Register No = {{data.register_no}}</p>
+			</div>
+			<div class="form-group">
+				<p>Branch = {{data.branch}}</p>
+			</div>
+			<div class="form-group">
+				<p>Email = {{data.email}}</p>
+			</div>
+			<button class="btn btn btn-primary">Password Change<i aria-hidden="true"></i>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

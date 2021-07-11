@@ -1,0 +1,40 @@
+
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>E-learning Platform</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/mystyle.css' %}" rel="stylesheet"/ type="text/css">
+  <style>
+  .bg{
+  	
+  	background-image: url('/static/mediafiles/images/dashboard_image.jpg'); 
+  		height:100%;
+  		background-size: cover;
+  		background-repeat : no-repeat;
+}
+</style>
+</head>
+<body class='bg'>
+<div class='container'>
+	<h1 class='text-center' style="color:white;">PasswordChange</h1>
+	<div class='jumbotron col-md' style="margin-top: 50px">
+		<form action="" method="POST" >
+			{% csrf_token %}
+			<label>CurrentPasword</label>
+			<input type="Password" name="currpass" placeholder="Enter the CurrentPasword" class="form-control">
+			<label>NewPassword</label>
+			<input type="Password" name="newpass" placeholder="Enter the NewPassword" class="form-control">
+			<label>Re-enterNewPassword</label>
+			<input type="Password" name="renewpass" placeholder="Re enter the NewPassword" class="form-control">
+			</div>
+			<button class="btn btn btn-primary">Password Change<i aria-hidden="true"></i>
+		</form>
+	</div>
+</div>
