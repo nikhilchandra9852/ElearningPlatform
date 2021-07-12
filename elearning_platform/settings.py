@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-#import django_heroku
-#import dj_database_url
+import django_heroku
+import dj_database_url
 import os
 from django.urls import reverse
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-wqxjl88yrh64c4wl80eqr+fd(za5@*m5772cwz5**uy9bwlidk
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
-ALLOWED_HOSTS = ['127.0.0.1','elearningvrsec.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -204,3 +204,5 @@ MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static","media")
 STATICFILES_DIRS=[
 os.path.join(os.path.dirname(BASE_DIR), "users/static")
 ]
+
+django_heroku.settings(locals())
