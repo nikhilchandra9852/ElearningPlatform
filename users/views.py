@@ -96,7 +96,7 @@ def dashboard(request,id):
 	return render(request,'users/dashboard.html',{'id':id,'exams':exams})
 
 def courses(request,id,branch):
-	dataset_path = "E:/elearning_platform/users/static/courses/"+str(branch)
+	dataset_path = "./users/static/courses/"+str(branch)
 	data =list(os.listdir(dataset_path))
 	data1 =[urllib.parse.quote(i,safe="") for i in data]
 	# for i in data:
