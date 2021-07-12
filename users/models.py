@@ -7,13 +7,13 @@ class Users(models.Model):
 	name=models.CharField(max_length=30)
 	register_no= models.CharField(max_length=10)
 	branch = models.CharField(max_length=20)
-	email= models.CharField(max_length=30)
+	email= models.CharField(max_length=50)
 	password=models.CharField(max_length=20)
 	con_password = models.CharField(max_length=20)
 
 
 class Logins(models.Model):
-	email = models.CharField(max_length=30)
+	email = models.CharField(max_length=50)
 	password = models.CharField(max_length=20)
 
 
