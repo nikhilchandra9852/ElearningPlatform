@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
 import os
 from django.urls import reverse
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -197,8 +199,8 @@ AUTHENTICATION_BACKENDS = (
 
 STATIC_URL = '/static/' 
 MEDIA_URL = '/media/'
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static","static-only")
+STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static-only")
 MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static","media")
 STATICFILES_DIRS=[
-os.path.join(os.path.dirname(BASE_DIR), "static", "static")
+os.path.join(os.path.dirname(BASE_DIR), "static")
 ]
